@@ -1,99 +1,107 @@
 # Customer Spending Score Prediction
 
-## Overview
+## **Overview**
 
-This project leverages supervised learning techniques to predict **Spending Scores** of customers based on features like **Age**, **Annual Income**, and **Gender**. By understanding customer spending behavior, businesses can make data-driven decisions to optimize marketing strategies, improve customer retention, and allocate resources more efficiently.
+This project leverages **supervised learning techniques** to predict **Spending Scores** of customers based on key features such as **Age**, **Annual Income**, and **Gender**. By analyzing customer spending behavior, the project aims to enable businesses to make **data-driven decisions** to:
 
----
-
-## Objectives
-
-The primary goal of this project is to:
-
-1. Develop a predictive model to estimate Spending Scores.
-2. Provide insights into the relationships between customer demographics and spending behavior.
-3. Lay the groundwork for personalized marketing strategies and customer segmentation.
+- Optimize marketing strategies.
+- Improve customer retention.
+- Allocate resources more efficiently.
 
 ---
 
-## Problem Statement
+## **Objectives**
 
-Understanding customer spending behavior is crucial for:
-
-- Optimizing marketing strategies.
-- Identifying high-value customers.
-- Improving ROI on marketing campaigns.
-
-By predicting Spending Scores, this project aims to solve the challenge of targeting customer segments effectively.
+1. Develop a **predictive model** to estimate customer Spending Scores.
+2. Provide **insights** into relationships between customer demographics and spending behavior.
+3. Lay the groundwork for **personalized marketing strategies** and **customer segmentation**.
 
 ---
 
-## Approach
+## **Problem Statement**
 
-1. **Exploratory Data Analysis**:
-    - Analyzed features such as Age, Gender, Annual Income, and Spending Score.
-    - Visualized data distributions and relationships using histograms, scatterplots, and heatmaps.
+Understanding customer spending behavior is crucial for businesses to:
+- **Optimize marketing efforts** by targeting the right customer segments.
+- **Identify high-value customers** for loyalty programs or premium services.
+- **Maximize ROI** by focusing resources on impactful strategies.
+
+Predicting Spending Scores helps solve the challenge of effectively targeting customer groups and improving overall business decision-making.
+
+---
+
+## **Approach**
+
+1. **Exploratory Data Analysis (EDA)**:
+    - Analyzed the distribution of features such as Age, Gender, Annual Income, and Spending Score.
+    - Visualized relationships and trends using **histograms**, **scatterplots**, and a **correlation heatmap**.
 
 2. **Data Preprocessing**:
-    - Handled missing values (none in this dataset).
-    - Converted categorical data (Gender) into numerical format.
-    - Normalized relevant features for consistency.
+    - Verified data quality and handled missing values (none in this dataset).
+    - Converted the categorical feature **Gender** into numerical format.
+    - Normalized continuous variables like **Age** and **Annual Income** to improve model performance.
 
 3. **Model Building**:
-    - Used **Linear Regression** as a baseline supervised learning model.
-    - Manually implemented the Normal Equation method for comparison with Scikit-learn's Linear Regression.
-    - Evaluated model performance using:
-        - **Mean Squared Error (MSE)**
-        - **R-squared (R²)**
+    - Implemented a **Linear Regression** model as a baseline.
+    - Compared results from:
+        - **Manual implementation** using the Normal Equation.
+        - **Scikit-learn's Linear Regression**.
+    - Enhanced model performance by testing **polynomial regression** (quadratic and cubic).
 
 4. **Model Evaluation**:
-    - Compared model predictions to baseline predictions (mean Spending Score).
-    - Analyzed performance metrics to assess model effectiveness.
+    - Evaluated the model using:
+        - **Mean Squared Error (MSE)**.
+        - **R-squared (R²)**.
+    - Compared model performance to the baseline (mean prediction).
 
 ---
 
-## Key Findings
+## **Key Findings**
 
-1. **Model Performance**:
-    - **Variance of Spending Score**: 663.52
-    - **Baseline MSE**: 663.52
-    - **Model MSE**: 480.67
-    - **R² (Scikit-learn)**: 0.0255
+### **Model Performance**
+- **Variance of Spending Score**: `663.52`
+- **Baseline MSE**: `663.52`
+- **Linear Model MSE**: `480.67`
+- **R² (Linear Regression)**: `0.0255`
 
-2. **Insights**:
-    - The model captures some relationship between features and Spending Scores, as indicated by the reduction in MSE compared to the baseline.
-    - However, the low R² value suggests limited explanatory power, indicating the need for:
-        - Additional features (e.g., purchase history, geographic location).
-        - Nonlinear models or transformations to capture complex relationships.
+### **Insights**
+1. **Linear Regression**:
+    - Reduced MSE compared to the baseline, capturing some relationships between features and Spending Scores.
+    - Low R² value indicates limited explanatory power and the need for additional features.
+2. **Polynomial Regression**:
+    - Quadratic and cubic models captured **non-linear trends**, improving fit to the data.
+    - **Cubic regression** performed best, with an R² of `0.073` and MSE of `460.12`.
 
 ---
 
-## Features in Dataset
+## **Features in Dataset**
 
-- **CustomerID**: Unique identifier for each customer (not used in the model).
-- **Gender**: Male (1) or Female (0).
+- **CustomerID**: Unique identifier for each customer (not used in modeling).
+- **Gender**: Male (`1`) or Female (`0`).
 - **Age**: Customer age in years.
 - **Annual Income**: Annual income in thousands of dollars.
-- **Spending Score**: A score between 1-100 representing customer spending habits.
+- **Spending Score**: A score from 1-100 representing spending habits (target variable).
 
 ---
 
-## Visualizations
+## **Visualizations**
 
 1. **Age Distribution**:
-    - A histogram showing the distribution of customer ages.
-2. **Annual Income by Gender**:
-    - A boxplot comparing income distributions for males and females.
-3. **Spending Score vs Age**:
-    - A scatterplot with gender as a hue to visualize spending trends by age.
-4. **Correlation Heatmap**:
-    - Highlights relationships between Age, Annual Income, Gender, and Spending Score.
+    - Histogram revealing age concentration in the 30-50 range.
+2. **Spending Score Distribution**:
+    - Violin plot showcasing spending behavior variability across ages.
+3. **Spending Score by Gender**:
+    - Boxplot comparing spending patterns between males and females.
+4. **3D Scatterplot**:
+    - Visualized Spending Score trends across **Age** and **Annual Income**.
+5. **Correlation Heatmap**:
+    - Revealed weak correlations between Spending Score and demographic features.
 
 ---
 
-## How to Use
+## **How to Use**
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/spending-score-prediction.git
    cd spending-score-prediction
+
